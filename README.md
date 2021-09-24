@@ -95,7 +95,15 @@ import pandas
 names = pandas.read_csv('names.csv', sep='#')
 ```
 
+<br>
+
+### Script in action
+
+Template | Result
+--- | ---
+<img src="template.png"> | <img src="out/Tushar Nankani.png">
+
 ## Author
 
-- [Tushar Nankani](https://www.linkedin.com/in/tusharnankani/)
+- [Tushar Nankani](https://tusharnankani.github.io/about/)
 
