@@ -39,7 +39,7 @@ Using the [pillow module](https://pypi.org/project/Pillow/) to make changes.
 ```python
 from PIL import Image, ImageFont, ImageDraw
 
-# Global Variables
+'''Global Variables'''
 FONT_FILE = ImageFont.truetype(r'font/GreatVibes-Regular.ttf', 180)
 FONT_COLOR = "#FFFFFF"
 
@@ -49,20 +49,20 @@ WIDTH, HEIGHT = template.size
 <br>
 
 - Placing the name on the certificate and saving to a different directory.
+
 ```python
 def make_certificates(name):
-    '''Function to save certificates as a .png file'''
-
+    '''Function to save certificates as a .png file
+    Finding the width and height of the text. 
+    Placing it in the center, then making some adjustments.
+    Saving the certificates in a different directory.
+    '''
+    
     image_source = Image.open(r'template.png')
     draw = ImageDraw.Draw(image_source)
-
-    # Finding the width and height of the text. 
     name_width, name_height = draw.textsize(name, font=FONT_FILE)
-
-    # Placing it in the center, then making some adjustments.
     draw.text(((WIDTH - name_width) / 2, (HEIGHT - name_height) / 2 - 30), name, fill=FONT_COLOR, font=FONT_FILE)
-
-    # Saving the certificates in a different directory.
+    
     image_source.save("./out/" + name +".png")
     print('Saving Certificate of:', name)        
 
@@ -82,6 +82,7 @@ with open('names.txt') as f:
         names.append(item[:-1].title())
 ```
 <br>
+
 - Using [pandas to read a `.csv` file](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html).
 
 ```python
