@@ -1,7 +1,7 @@
 from PIL import Image, ImageFont, ImageDraw
 
 # Global Variables
-FONT_FILE = ImageFont.truetype(r'GreatVibes-Regular.ttf', 180)
+FONT_FILE = ImageFont.truetype(r'font/GreatVibes-Regular.ttf', 180)
 FONT_COLOR = "#FFFFFF"
 
 template = Image.open(r'template.png')
