@@ -35,7 +35,10 @@ All you need
 
 Using the [pillow module](https://pypi.org/project/Pillow/) to make changes.
 <br>
+
 - Calculating and declaring default values.
+
+
 ```python
 from PIL import Image, ImageFont, ImageDraw
 
@@ -46,6 +49,7 @@ FONT_COLOR = "#FFFFFF"
 template = Image.open(r'template.png')
 WIDTH, HEIGHT = template.size
 ```
+
 <br>
 
 - Placing the name on the certificate and saving to a different directory.
@@ -67,6 +71,7 @@ def make_certificates(name):
     print('Saving Certificate of:', name)        
 
 ```
+
 <br>
 
 ### Names
