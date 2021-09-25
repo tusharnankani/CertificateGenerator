@@ -103,7 +103,17 @@ Template | Result
 --- | ---
 <img src="template.png"> | <img src="out/Tushar Nankani.png">
 
-## Author
+<br><br>
+
+### Future Scope?
+
+- More customisations
+- Directly e-mail as certificates are generated
+- A web interface?
+
+<br>
+
+### Author
 
 - [Tushar Nankani](https://tusharnankani.github.io/about/)
 
