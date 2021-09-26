@@ -1,7 +1,7 @@
-<p align="center">
+<!-- <p align="center">
   <b>Certificate Generator</b>
-</p>
-<br>
+</p> -->
+<br><br>
 <p align="center">
   <img width ="70%" src="https://user-images.githubusercontent.com/61280281/134729891-673ca940-13dd-4c51-8597-ee576267d374.png">
 </p>
@@ -99,11 +99,15 @@ names = pandas.read_csv('names.csv', sep='#')
 
 ### Script in action
 
+<br>
+
 Template | Result
 --- | ---
 <img src="template.png"> | <img src="out/Tushar Nankani.png">
 
-<br><br>
+Design Courtesy [@GauravRaj](https://www.instagram.com/gauravraj0510)
+
+<br>
 
 ### Future Scope?
 
@@ -111,9 +115,9 @@ Template | Result
 - Directly e-mail as certificates are generated
 - A web interface?
 
-<br>
+<br><br>
 
-### Author
+#### Author
 
-- [Tushar Nankani](https://tusharnankani.github.io/about/)
+[Tushar Nankani](https://tusharnankani.github.io/about/)
 
