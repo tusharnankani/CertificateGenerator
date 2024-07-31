@@ -23,9 +23,11 @@
 All you need
 
 - Certificate
-  - Design a [simple template](template.png) on [Canva](https://www.canva.com/)
+  - Design a [simple template](resources/templates/template.png) on [Canva](https://www.canva.com/)
+- Logo
+  - If you want to add your logo to the template, get a transparent .png file of your logo like [this](resources/logo/logo.png).
 - Font
-  - A .ttf (True-Type Font) file like [this](/font), can simply be downloaded from [here](https://www.google.com/search?q=download+.ttf+fonts).
+  - A .ttf (True-Type Font) file like [this](/resources/font), can simply be downloaded from [here](https://www.google.com/search?q=download+.ttf+fonts).
 - Names
   - Finally, a list of names in a .txt format or a .csv format.
 
@@ -38,15 +40,14 @@ Using the [pillow module](https://pypi.org/project/Pillow/) to make changes.
 
 - Calculating and declaring default values.
 
-
 ```python
 from PIL import Image, ImageFont, ImageDraw
 
 '''Global Variables'''
-FONT_FILE = ImageFont.truetype(r'font/GreatVibes-Regular.ttf', 180)
+FONT_FILE = ImageFont.truetype(r'resources/font/GreatVibes-Regular.ttf', 180)
 FONT_COLOR = "#FFFFFF"
 
-template = Image.open(r'template.png')
+template = Image.open(r'resources/templates/template.png')
 WIDTH, HEIGHT = template.size
 ```
 
@@ -56,23 +57,37 @@ WIDTH, HEIGHT = template.size
 
 ```python
 def make_certificates(name):
-    '''Function to save certificates as a .png file
-    Finding the width and height of the text. 
-    Placing it in the center, then making some adjustments.
-    Saving the certificates in a different directory.
-    '''
-    
-    image_source = Image.open(r'template.png')
-    draw = ImageDraw.Draw(image_source)
-    name_width, name_height = draw.textsize(name, font=FONT_FILE)
-    draw.text(((WIDTH - name_width) / 2, (HEIGHT - name_height) / 2 - 30), name, fill=FONT_COLOR, font=FONT_FILE)
-    
-    image_source.save("./out/" + name +".png")
-    print('Saving Certificate of:', name)        
+  '''Function to save certificates as a .png file
+  Finding the width and height of the text. 
+  Placing it in the center, then making some adjustments.
+  Saving the certificates in a different directory.
+  '''
+
+  image_source = Image.open(r'resources/templates/template.png')
+  draw = ImageDraw.Draw(image_source)
+  name_width, name_height = draw.textsize(name, font=FONT_FILE)
+  draw.text(((WIDTH - name_width) / 2, (HEIGHT - name_height) / 2 - 30), name, fill=FONT_COLOR, font=FONT_FILE)
+
+  image_source.save("./out/" + name + ".png")
+  print('Saving Certificate of:', name)
 
 ```
 
 <br>
+
+### Logo
+
+- Setting up the `logo` file to place in the `template`
+
+```python
+# Adding the logo
+logo = Image.open(r'resources/logo/logo.png')
+logo_width, logo_height = logo.size
+
+# Placing it in the top middle
+logo_position = ((WIDTH - logo_width) // 2, (HEIGHT - logo_height) // 12)
+image_source.paste(logo, logo_position, logo)
+```
 
 ### Names
 
@@ -101,9 +116,19 @@ names = pandas.read_csv('names.csv', sep='#')
 
 <br>
 
+<b>Without placing the logo</b>
+
 Template | Result
 --- | ---
-<img src="template.png"> | <img src="out/Tushar Nankani.png">
+<img src="resources/templates/template.png"> | <img src="out/Tushar Nankani.png">
+
+<br>
+
+<b>With placing the logo</b>
+
+Template | Result
+--- | ---
+<img src="resources/templates/template2.png"> | <img src="out/Asib Hossen.png">
 
 Design Courtesy [@GauravRaj](https://www.instagram.com/gauravraj0510)
 
@@ -117,7 +142,8 @@ Design Courtesy [@GauravRaj](https://www.instagram.com/gauravraj0510)
 
 <br><br>
 
-#### Author
+#### Authors
 
 [Tushar Nankani](https://tusharnankani.github.io/about/)
 
+[Asib Hossen](https://github.com/asibhossen897)
